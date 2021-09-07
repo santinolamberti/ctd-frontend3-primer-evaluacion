@@ -18,7 +18,14 @@ export default class Historia extends React.Component{
         }
     }
 
-    
+    componentDidUpdate = () => {
+        Swal.fire({
+            icon: 'success',
+            title: 'usted eligió' + " " + this.state.anterior,
+            showConfirmButton: false,
+            timer: 1000
+          })
+    }
 
 
     handleOpciones = (e) => {
@@ -31,13 +38,13 @@ export default class Historia extends React.Component{
             id: idUpdated,
             actual: optionUpdate,
             anterior: opcion,
-            historial: [...this.state.historial, e.target.value]
+            historial: [...this.state.historial, opcion]
         })}else{
             Swal.fire({
                 icon: 'success',
                 title: 'Primer parcial finalizado',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 2000
               })
         }
 
