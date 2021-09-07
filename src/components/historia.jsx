@@ -30,15 +30,15 @@ export default class Historia extends React.Component{
 
     handleOpciones = (e) => {
         const idUpdated = this.state.id + 1;
-        const option = idUpdated + e.target.id;
-        const optionUpdate = data.find(i => i.id == option)
-        const opcion = e.target.value
-        if(optionUpdate != null){
+        const concatIdLetra = idUpdated + e.target.id;
+        const concatEqualsJSON = data.find(i => i.id == concatIdLetra)
+        const letraMayuscula = e.target.value
+        if(concatEqualsJSON != null){
         this.setState ({
             id: idUpdated,
-            actual: optionUpdate,
-            anterior: opcion,
-            historial: [...this.state.historial, opcion]
+            actual: concatEqualsJSON,
+            anterior: letraMayuscula,
+            historial: [...this.state.historial, letraMayuscula]
         })}else{
             Swal.fire({
                 icon: 'success',
