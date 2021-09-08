@@ -5,6 +5,7 @@
 
 #root {
   background-color: black;
+  height: 700px
 }
 .layout {
   height: 100vh;
